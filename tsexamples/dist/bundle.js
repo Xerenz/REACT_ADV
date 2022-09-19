@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=function(){function e(e,t){this.name=e,this.age=t}return e.prototype.getName=function(){return this.name},e.prototype.getAge=function(){return this.age},e}();console.log("Hello Webpack!!!");var t=new e("Harry",34);console.log(t.getName(),t.getAge()),console.log(t.name)})();

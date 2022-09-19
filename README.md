@@ -351,6 +351,72 @@ function doTask():void {
 
 doTask();
 
+================================
+
+JS Automation tools:
+Grunt, Gulp, Webpack
+
+Grunt is a JavaScript task runner, a tool used to automatically perform frequent tasks such as minification, compilation, unit testing, and linting. It uses a command-line interface to run custom tasks defined in a file
+
+Webpack ==> react / angular / ...
+
+tsc --init [ tsconfig.json]
+
+npm i typescript webpack webpack-cli ts-loader html-webpack-plugin webpack-dev-server -D
+
+// babel-loader
+
+ES2015 module system:
+export class Person {
+    
+}
+
+CommonJS:
+class Person {
+
+}
+module.exports = {
+	Person
+}
+
+===
+
+export class Person {
+    private name:string;
+    private age:number;
+    public constructor(name:string, age:number) {
+        this.name = name;
+        this.age = age;
+    }
+}
+
+can be written as :
+
+export class Person {
+    public constructor(private name:string, private age:number) {
+    }
+}
+
+import {Person} from './Person';
+
+---
 
 
+JS private
 
+class ClassWithPrivateField {
+  #privateField;
+}
+
+===
+
+The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles. 
+
+bundle.Fsdf44232323.js
+
+<script src="bundle.Fsdf44232323.js"></script>
+
+bundle.hdse434gsr.js
+<script src="bundle.hdse434gsr.js"></script>
+
+====
