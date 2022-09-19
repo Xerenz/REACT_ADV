@@ -1,3 +1,6 @@
+import { Course } from "./Course";
+
+@Course({name:"Typescript"})
 export default class Person {
     public constructor(private name:string, private age:number) {
     }

@@ -420,3 +420,36 @@ bundle.hdse434gsr.js
 <script src="bundle.hdse434gsr.js"></script>
 
 ====
+
+
+ "experimentalDecorators": true,
+
+ TS Decorators ==> Decorator pattern
+
+ Angular ==> TS ==> Decorator pattern
+
+ // Component is a Decorator
+
+ @Component({
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.css']
+})
+export class ProductComponent {
+	//state and behaviour
+}
+
+@Component({
+  selector: 'app-customer',
+  template: '<div></div>',
+  styles: ['<style></style>']
+})
+export class CustomerComponent {
+	//state and behaviour
+}
+
+<app-product></app-product>
+<app-customer></app-customer>
+
+=================
+
