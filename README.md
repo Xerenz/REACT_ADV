@@ -242,12 +242,7 @@ tsc --lib dom,es2015 first.ts
 node first.js
 
 =====================
-
-md tsexamples
-cd tsexamples
-npm init --y
-
-=========
+ 
 
 Function Generics / HOF
 
@@ -265,3 +260,97 @@ node hof.js
 ts-node
 
 npx ts-node hof.ts
+
+===========
+
+JavaScript in typescript
+md tsexamples
+cd tsexamples
+npm init --y
+
+npm i lodash
+
+============
+
+Solution 1)
+index.html
+<script src="_//lodash"></script>
+
+myCode.ts
+
+declare var random:any;
+
+function doTask():void {
+	console.log(random(1,100));
+}
+
+Solution 2)
+npm i lodash typescript
+tsc --init
+==> generates tsconfig.json
+
+using typings.d.ts
+
+declare module "lodash" {
+    export function random(min:number, max:number)
+}
+
+sample.ts
+import {random} from 'lodash';
+
+function doTask():void {
+	console.log(random(1,100));
+}
+
+doTask();
+$ tsc
+
+DefinitelyTyped:
+
+https://github.com/DefinitelyTyped/DefinitelyTyped
+
+"fs", "http", "cluster" ===> are all js node modules
+
+npm i -D @types/node
+
+--
+
+npm i react
+this installs react js library
+
+if i need to use it in TS
+
+npm i -D @types/react
+
+Solution 3)
+
+npm i -D @types/lodash
+comment typings.d.ts
+
+tsconfig.js
+ "module": "ES2015",
+
+Module system:
+
+1) CommonJS
+
+let lodash = require('lodash');
+
+2) ES2015
+
+import lodash from 'lodash';
+
+==
+
+import { random } from "lodash";
+
+
+function doTask():void {
+	console.log(random(1,100));
+}
+
+doTask();
+
+
+
+
