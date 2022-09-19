@@ -243,5 +243,25 @@ node first.js
 
 =====================
 
-Resume @ 11:20
+md tsexamples
+cd tsexamples
+npm init --y
 
+=========
+
+Function Generics / HOF
+
+HOF:
+* functions which accepts functions as arguments
+* functions which return a function
+
+=============
+
+tsc hof.ts
+node hof.js
+
+===
+
+ts-node
+
+npx ts-node hof.ts
