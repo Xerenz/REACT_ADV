@@ -703,4 +703,43 @@ class UserComponent extends React.Component<UserProps,{}> {
 }
 ReactDOM.render(<UserComponent name="smith" age="24" />, document.getElementById("root")) 
 ```
+React <18 
+import ReactDOM from 'react-dom';
+ReactDOM.render(<UserComponent name="smith" age="24" />, document.getElementById("root")) 
+
+stack render
+
+React 18+
+fiber render ==> Concurrency
+import ReactDOM from 'react-dom/client';
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+===
+npm start
+
+http://localhost:3000/products
+http://localhost:3000/cart
+http://localhost:3000/cartdf
+http://localhost:3000/details/2
+
+============
+
+context_init.zip
+images ==> public folder
+replace src/App.css
+replace public/index.html
+add Navbar.tsx & Button.tsx into "src/components" folder
+
+npm i -D @types/styled-components
+
+
+
+
 
