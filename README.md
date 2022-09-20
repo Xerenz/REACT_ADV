@@ -453,3 +453,139 @@ export class CustomerComponent {
 
 =================
 
+Types of Decorators:
+
+1) class Decorator
+
+	
+
+@Component ()
+export class AppComponent { 
+
+2) PropertyDecorator
+
+function Input(target:object, propertyKey:string) {}
+
+
+export class AppComponent {  
+		@Input()
+    name: string = "Angular 2" 
+
+3) Method decorator
+
+function Valid(target:object, methodName:string, descriptor: PropertyDescriptor) {}
+
+
+  @Valid()
+   addProduct(p:Product) {}
+
+4) Parameter Decorator
+
+
+function @Min(target:object, methodName:string, index: number) {}
+
+	addProduct(id:number, @Min(value=3, "msg": "title has to be min 3 characters") title:string) {
+
+	}
+
+========
+
+Day 2:
+TypeScript Utility
+1 — Partial
+This can make all properties optional in a type where properties originally should be required.
+
+type Worker = {
+  name: string;
+  profession: string;
+}
+// Not defining 'profession' is allowed
+const worker: Partial<Worker> = {
+  name: 'Kim' 
+}
+
+---
+2 — Required
+The opposite one of Partial is Required, instead of making properties optional, it makes them required.
+
+type Worker = {
+  name?: string;
+  profession?: string;
+}
+// You should defining 'name' and 'profession'
+const worker: Required<Worker> = {
+  name: 'Kim',
+  profession: 'Developer',
+}
+
+---
+
+3 — Readonly
+With Readonly, you prevent that properties are going to be re-assigned.
+
+type Worker = {
+  name: string;
+  profession: string;
+}
+const worker: Readonly<Worker> = {
+  name: 'Kim',
+  profession: 'Developer',
+}
+worker.name = 'Larry'; // Not allowed
+
+-----
+
+4 — Pick
+can be used to include only a few properties.
+
+type Worker = {
+  name: string;
+  profession: string;
+  isWorking: boolean;
+}
+// Only 'name' and 'isWorking' are included
+const worker: Pick<Worker, "name" | "isWorking"> = {
+  name: 'Kim',
+  isWorking: true,
+}
+
+5 — Omit
+The opposite way of the Pick type is called Omit
+
+6 - Extract
+Extract<T, U>. is a utility for pulling out values that are shared between the two type arguments it receives.
+
+interface UserBase {
+  email: string
+  image: string | null
+  username: string
+}
+
+interface UserProfile {
+  id: string
+  email: string
+  image: string | null
+  isAdmin: boolean
+  username: string
+  reviews: string[]
+}
+
+type SharedUserKeys = Extract<keyof UserBase, keyof UserProfile>
+// 'email' | 'image' | 'username'
+
+Convert our union string back into an object type with the shared properties and their corresponding value types.
+ 
+
+type SharedUserData = {
+  [K in SharedUserKeys]: UserProfile[K]
+}
+
+const user1: SharedUserData = {
+  email: 'test@example.com',
+  image: null,
+  username: 'sampleuser',
+}
+
+===================
+
+Day 2
