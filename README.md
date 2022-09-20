@@ -601,6 +601,11 @@ React Typescript
 
 npx create-react-app shopapp --template typescript
 
+cd shopapp
+
+npm i bootstrap styled-components react-router-dom
+npm i -D @types/styled-components 
+
 * creates a scaffolding code for react application with typescript enabled
 
 Option1:
@@ -626,6 +631,76 @@ Settings
     2) CDN ==> react , react-dom
     https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js
     https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js
-    
+
+React.createElement("div", null, "<h1>Hello World</h1>")
 * Functional Component
+
+https://github.com/chentsulin/awesome-react-renderer
+
+ReactNode
+	* string
+	* number
+	* null
+	* ReactElement
+	* Array of ReactElement
+
+```
+// JSX
+function Welcome({msg}: {msg?:string}) :React.ReactElement {
+  return <div>
+      <h1>{msg}</h1>
+    </div>
+}
+
+// console.log(Welcome());
+
+ReactDOM.render(<Welcome msg="Good Day"/>, document.getElementById("root")) 
+
+```
+
+
+Children:
+
+```
+// JSX
+function Welcome({msg}: {msg?:string}) :React.ReactElement {
+  return <div>
+      <h1>{msg}</h1>
+    </div>
+}
+
+// console.log(Welcome());
+
+function Parent({children}: {children:React.ReactNode}): React.ReactElement {
+  return <div>
+        <h1>Parent</h1>
+        {children}
+    </div>
+}
+ReactDOM.render(<Parent><Welcome msg="Good Day"/></Parent>, document.getElementById("root")) 
+
+```
+
+Class Component:
+ state, behaviour, life-cycle methods
+
+
+```
+interface UserProps {
+  name: string,
+  age: number
+}
+class UserComponent extends React.Component<UserProps,{}> {
+  constructor(props:UserProps) {
+    super(props);
+  }
+  render() {
+    return <>
+       <h1> User Component </h1>
+       Hello, {this.props.name} {this.props.age}
+     </>
+  }
+}
+ReactDOM.render(<UserComponent name="smith" age="24" />, document.getElementById("root")) 
+```
 
