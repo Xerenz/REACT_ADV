@@ -16,3 +16,14 @@ export function Upper() {
 
     }
 }
+
+/*
+  class Person {
+    @Upper()
+    public name:string;
+  }
+
+   p.name ="tim"
+
+   consoel.log(p.name);
+*/

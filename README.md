@@ -457,7 +457,6 @@ Types of Decorators:
 
 1) class Decorator
 
-	
 
 @Component ()
 export class AppComponent { 
@@ -468,7 +467,7 @@ function Input(target:object, propertyKey:string) {}
 
 
 export class AppComponent {  
-		@Input()
+	@Input()
     name: string = "Angular 2" 
 
 3) Method decorator
@@ -492,6 +491,7 @@ function @Min(target:object, methodName:string, index: number) {}
 
 Day 2:
 TypeScript Utility
+
 1 — Partial
 This can make all properties optional in a type where properties originally should be required.
 
@@ -499,6 +499,7 @@ type Worker = {
   name: string;
   profession: string;
 }
+
 // Not defining 'profession' is allowed
 const worker: Partial<Worker> = {
   name: 'Kim' 
@@ -558,7 +559,8 @@ Extract<T, U>. is a utility for pulling out values that are shared between the t
 interface UserBase {
   email: string
   image: string | null
-  username: string
+  username: string,
+  password:string
 }
 
 interface UserProfile {
@@ -589,3 +591,41 @@ const user1: SharedUserData = {
 ===================
 
 Day 2
+
+React Typescript
+
+* React.createElement()
+* Functional Component
+* Class component
+
+
+npx create-react-app shopapp --template typescript
+
+* creates a scaffolding code for react application with typescript enabled
+
+Option1:
+npm init --y
+npm install webpack webpack-cli html-webpack-plugin webpack-dev-server typescript
+npm i react react-dom jest
+
+tsc --init // tsconfig.json
+npm i -D @types/node @types/react @types/react-dom @types/jest
+
+
+Option 2:
+npx create-react-app shopapp // creates scafoolding code for "react with js" 
+npm i typescript
+npm i -D @types/node @types/react @types/react-dom @types/jest
+index.js ==> index.tsx
+
+https://codepen.io/
+Settings
+* Behaviour => AutoSave and Auto Preview ==> disable
+* JS ==> 
+	1) Preprocessor ==> typescript
+    2) CDN ==> react , react-dom
+    https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js
+    https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js
+    
+* Functional Component
+
